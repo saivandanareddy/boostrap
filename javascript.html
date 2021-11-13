@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>document</title>
+     <style>
+         #card{
+             border: 2px solid rgb(224, 183, 240);
+             background-color: rgb(152, 228, 241);
+         }
+     </style>
+
+
+
+</head> 
+<body>
+    <div class="main">
+        <div id="card">
+
+        </div>
+
+    </div>
+    <script>
+        fetch('data.json').then(Response=>Response.json())
+     .then(data=>
+     //console.log(data)
+     details(data)
+     )
+     var main=document.querySelector('.main');
+     var card=document.getElementById('card')
+      
+             function details(info){
+                 var heading=document.createElement('h1');
+                 heading.textContent=info.name;
+                 card.appendChild(heading);
+                 main.appendChild(card)
+
+             }
+
+         
+
+
+         </script>
+        <!-- <script src="index.js">
+
+        </script>  -->
+        </body>
+</html>
